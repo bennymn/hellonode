@@ -1,8 +1,5 @@
-pipeline {
-  // Assign to docker slave(s) label, could also be 'any'
-  agent {
-    label 'docker' 
-  }
+node {
+    def app
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
