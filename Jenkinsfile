@@ -1,6 +1,11 @@
 node {
     def app
-
+    docker
+    {
+        image 'maven:3-apline'
+        args '-u root -p 8084:8084 -v /var/run/docker.sock:/var/run/docker.sock'
+    }
+    
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
